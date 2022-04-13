@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic registration form</title>
+    <style>
+        .container {
+            width: 20%;
+            margin: 3em auto;
+            padding: 3rem;
+        }
+          
+        .first input {
+            width: 100%;
+            display: block;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        .first label {           
+            line-height: 35px;
+        }
+
+        .btn {
+            margin-top: 2em;
+            background-color: #932d0e;
+            border: none;
+            color: white;
+            padding: 16px 30px;
+            text-align: center;
+            font-size: 16px;
+            opacity: 1;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover{
+            opacity: .8;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <div class="container">
+
+            <div class="first">
+                <label for="fname"><b>Full name:</b></label>
+                <input type="text" id="fname">
+
+
+                <label for="email"><b>Email:</b></label>
+                <input type="email" id="email">
+
+
+
+                <label for="tel"><b>Telephone:</b></label>
+                <input type="tel" id="tel">
+
+            </div>
+            <p><b>Gender:</b></p>
+            <div>
+                <input type="radio" id="gender" name="gender" value="male">
+                <label for="gender">Male</label>
+                <input type="radio" id="gender" name="gender" value="female">
+                <label for="gender">Female</label>
+            </div>
+
+            <a href="#"><button class="btn">Register</button></a>
+            
+        </div>
+    </form>
+</body>
+
+</html>
