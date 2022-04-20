@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khai báo và sử dụng biến</title>
+</head>
+
+<body>
+    <button onclick="printVar()">Bai 1</button>
+    <button onclick="findRectangle()">Bai 2</button>
+    <button onclick="findNumber()">Bai 3</button>
+
+    <script>
+        // Bài 1: 
+        function printVar() {
+            let i = 10
+            let f = 20.5
+            let b = true
+            let s = 'Hà Nội'
+            document.write('i = ' + i)
+            document.write('<br/>')
+            document.write('f = ' + f)
+            document.write('<br/>')
+            document.write('b = ' + b)
+            document.write("<br/>")
+            document.write('s = ' + s)
+        }
+
+        // Bài 2
+        function findRectangle() {
+            let width = 20
+            let heigh = 10 
+            let area = width * innerHeight
+            document.write('Area= ' + area)
+        }
+
+        // Bài 3
+        function findNumber() {
+            let a = prompt("Enter any number in a:")
+            let b = prompt("Enter any number in b:")
+            if (a % b == 0) {
+                alert(a + ' là bội số của b')
+            } else {
+                alert('a không phải là bội số của b')
+            }
+        }
+    </script>
+</body>
+
+</html>
