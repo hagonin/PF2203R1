@@ -22,11 +22,11 @@
     <table>
         <tr>
             <td id="bai1" onclick="displayDate()">Bài 1: Display date</td>
-            <td id="bai2" onclick="calPeri()">Bài 2: Find area and perimeter of a circle</td>
-            <td id="bai3" onclick="calRate">Bài 3: Calculate interest rate loan</td>
-            <td id="bai4" onclick="sendLetter()">Bài 4: Send the letter</td>
+            <td id="bai2" onclick="calCircle()">Bài 2: Find area and perimeter of a circle</td>
+            <td id="bai3" onclick="calRate()">Bài 3: Calculate interest rate loan</td>            
         </tr>
     </table>
+    <p id="bai4" onclick="sendLetter()">Bài 4: Send the letter</p>
     <script>
         function displayDate() {
             let day = prompt("Enter the day:")
@@ -35,22 +35,23 @@
             document.getElementById('bai1').innerText = day + '-' + month + '-' + year
         }
 
-        function calPeri() {
+        function calCircle() {
             let perimeter = prompt('Enter circle perimeter: ')
             // 3 same ways to calculate
             let area = perimeter ** 2 * Math.PI
             // let perim = perimeter * perimeter * Math.PI
-            // let peri = Math.pow(perimeter, 2) * Math.PI
+            // Tính mũ bằng thư viện Math.pow()
+            let peri = Math.pow(perimeter, 2) * Math.PI
             // toFixed: làm tròn số        
-            document.getElementById('bai2').innerHTML = "The area is "+ area.toFixed(2) + '<br/>' + "The perimeter is" + peri.toFixed(2)
+            document.getElementById('bai2').innerHTML = "The area is "+ area.toFixed(2) + "<br/>The perimeter is " + peri.toFixed(2)
         }
 
         function calRate() {
             let money = +prompt('Enter the sum of inital money')
-            let rate = +prompt('Enter the annual rate')
-            let year = +prompt('Enter the account of year want to send')
+            let rate = prompt('Enter the annual rate')
+            let year = prompt('Enter the account of year want to send')
             let moneyReceived = money + (money * rate / 100) * year
-            document.getElementById('bai3').innerText = 'Received money is' + moneyReceived
+            document.getElementById('bai3').innerText = 'Received money is ' + moneyReceived
         }
 
         function sendLetter() {
