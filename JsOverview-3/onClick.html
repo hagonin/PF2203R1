@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Click</title>
+</head>
+<body>
+    <!-- Onclick -->
+    <p onclick="do_something()">Click me</p>
+    <p id="demo">Click me to know what happen</p>
+
+    <button id="myBtn">Try it</button>
+    <p id="btn-event"></p>
+    <!-- Onchange -->
+    <p>Select a new car from the list</p>
+    <select id="mySelect" onchange="changeThing">
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Peugot">Peugot</option>
+        <option value="Toyota">Toyota</option>
+    </select>
+
+    <!-- Onmouseover and out -->
+    <p id="demo1">This is a text</p>
+</body>
+
+<script>
+    //------Section 1: Onclick
+    function do_something() {
+        alert('Hello World')
+    }
+    var demo = document.getElementById('demo')
+    demo.addEventListener('click',clickFunction);
+    function clickFunction() {
+        alert ('This is for click on me')
+    }
+
+    document.getElementById("myBtn").onclick = displayDate;
+    function displayDate() {
+        document.getElementById("btn-event").innerHTML = Date();
+    }
+    //------ Section 2: Onchange 
+    function changeThing() {
+        var selectedValue = document.getElementById("mySelect").value;
+        console.log(selectedValue);
+    }
+
+    var selectedElement = document.getElementById("mySelect");
+    selectedElement.addEventListener("change",changeFunction);
+    function changeFunction() {
+        var selectedValue = document.getElementById("mySelect").value;
+        alert(selectedValue);
+    }
+
+    //------Section3:  Onmouse over and out 
+
+    // function mouseover() {
+    //     document.getElementById("demo1").style.color ="red";
+    // }
+    // function mouseout() {
+    //     document.getElementById("demo1").style.color ="blue";
+    // }
+
+    var Mouse = document.getElementById("demo1");
+    demo1.addEventListener("mouseover",mOver);
+    demo1.addEventListener("mouseout",mOut);
+    function mOver() {
+        document.getElementById("demo1").style.color ="orange";
+    }
+    function mOut() {
+        document.getElementById("demo1").style.color="green";
+    }
+
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Ex 1</title>
+    <style>
+        html, body {
+            display: flex;
+            justify-content: start;
+            align-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 3rem;            
+        }
+        div, button {
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn-primary" onclick="showMessage1()">Click to see</button>
+    
+    <button class="btn btn-warning" onclick="showMessage2()">Try to click me</button>
+
+    <button class="btn btn-info" onclick="showMessage3()">Click to display</button>
+
+    <button class="btn btn-danger" onclick="showMessage4()">Click to display</button>
+
+    
+    <div id="messageDiv"></div>
+
+</body>
+<script>
+    function showMessage1() {
+        alert('Hello World !')
+    }
+
+    function showMessage2() {
+        document.getElementById("messageDiv").innerHTML ='Hello Madam!'
+    }
+
+    function showMessage3() {
+        document.write('Good morning!');
+    }
+
+    function showMessage4() {
+        console.log("Good afternoon!");
+    }
+</script>
+</html>
