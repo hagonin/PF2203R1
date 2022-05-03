@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Calculate lunar year</title>
+</head>
+<body>
+    <h3>Calculate lunar year from solar calendar</h3>
+    <div>
+        <input id="year" type="text">
+        <h4 id="result"></h4>
+        <button onclick="calYear()">Start</button>
+    </div>
+</body>
+<script>
+    function calYear() {
+        let solarYear = document.getElementById("year").value
+        let lunarYear = "Lunar year is: "
+        let shang = solarYear % 10
+        let chi = solarYear % 12
+
+        switch (shang) {
+            case 0: {
+                lunarYear += "Canh "
+            }
+            break
+            case 1: {
+                lunarYear += "Tan "
+            }
+            break
+            case 2: {
+                lunarYear += "Nham "
+            }
+            break
+            case 3: {
+                lunarYear += "Quy "
+            }
+            break
+            case 4: {
+                lunarYear += "Giap "
+            }
+            break
+            case 5: {
+                lunarYear += "At "
+            }
+            break
+            case 6: {
+                lunarYear += "Binh "
+            }
+            break
+            case 7: {
+                lunarYear += "Dinh "
+            }
+            break
+            case 8: {
+                lunarYear += "Mau "
+            }
+            break
+            case 9: {
+                lunarYear += "Ky "
+            }
+            break
+        }
+
+        switch(chi) {
+            case 0: {
+                lunarYear += "Than"
+            }
+            break
+            case 1: {
+                lunarYear += "Dau"
+            }
+            case 2: {
+                lunarYear += "Tuat"
+            }
+            break
+            case 3: {
+                lunarYear += "Hoi"
+            }
+            break
+            case 4: {
+                lunarYear += "Ty"
+            }
+            break
+            case 5: {
+                lunarYear += "Suu"
+            }
+            break
+            case 6: {
+                lunarYear += "Dan"
+            }
+            break
+            case 7: {
+                lunarYear += "Meo"
+            }
+            break
+            case 8: {
+                lunarYear += "Thin"
+            }
+            break
+            case 9: {
+                lunarYear += "Ty"
+            }
+            break
+            case 10: {
+                lunarYear += "Ngo"
+            }
+            break
+            case 11: {
+                lunarYear += "Mui"
+            }
+            break           
+        }
+        document.getElementById("result").innerHTML = lunarYear
+    }
+</script>
+</html>
