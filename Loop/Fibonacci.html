@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <title>Fibonacci</title>
+  <style>
+      div, p {
+          padding-top: 1.5rem;
+      }
+  </style>
+</head>
+<body>
+<div class="container row">
+    <div class="col-4 mt-5">
+        <h5 class="text-decoration-underline mb-4">Fibonacci series</h5>
+        <input id="count" type="number" class="form-control">
+        <button onclick="displayFibonacci(), calSum(), findNum5()" class="btn btn-success my-3">Start</button>
+        <p id="result"></p>
+        <p id="result_1"></p>
+        <p id="result_2"></p>        
+    </div>    
+</div>
+</body>
+<script>
+    function displayFibonacci(){
+        let amount = +document.getElementById("count").value
+        let num1 = 0, num2 = 1, count = 1
+        // num1 =1 && num2 = 0 to start Fibo series from O
+        let result = "<strong class='text-danger'>The Fibonacci is: </strong> <br>"
+
+        while (count <= amount) {
+            result += num2 + " "
+            let add_number = (num1 + num2)
+            num1 = num2
+            num2 = add_number
+            count++
+        }
+        document.getElementById("result").innerHTML = result
+    }
+
+    function calSum() {
+        let amount = +document.getElementById("count").value
+        let num1 = 0, num2 = 1, count = 1, sum = 0
+
+        while (count <= amount) {
+            sum += num2
+            let add_number = (num1 + num2)
+            num1 = num2
+            num2 = add_number
+            count++
+        }
+        document.getElementById("result_1").innerHTML = "<strong class='text-primary'>The total of Fibonacci series is : </strong> " + sum
+    }
+
+    function findNum5() {
+        let num1 = 0, num2 = 1, divi 
+        while(true) {
+            if (num2 %5 == 0){
+                divi = num2
+                break
+            }
+            let add_number = (num1 + num2)
+            num1 = num2
+            num2 = add_number
+        }
+        document.getElementById("result_2").innerHTML = "<strong class='text-success'>First number in Fibonacci series divisible by 5 is : </strong> " + divi
+    }
+</script>
+</html>
