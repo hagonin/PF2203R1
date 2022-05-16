@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triangle</title>
+  </head>
+  <body>
+    <div id="triangle"></div>
+  </body>
+  <script>
+    let size = 5;
+    let sta = "*";
+
+    for (let i = 1; i <= size; i++) {
+      let right = sta.repeat(`${i}`);
+      console.log(right);
+    }
+
+    console.log("---------------");
+    for (let i = size; i >= 1; i--) {
+      let mr = sta.repeat(`${i}`);
+      console.log(mr);
+    }
+
+    console.log("---------------");
+    let triangle = "";
+    for (let i = 0; i <= size; i++) {
+      for (let j = 0; j < size - i; j++) {
+        triangle += " ";
+      }
+      for (let k = 1; k <= i; k++) {
+        triangle += sta;
+      }
+      triangle += "\n";
+    }
+    console.log(triangle);
+
+    console.log("---------------");
+    let triangler = "";
+    for (let i = 5; i >= 1; i--) {
+      for (let n = 0; n < size - i ; n++) {
+        triangler += " ";
+      }
+      for (let h = 1; h <= i; h++) {
+        triangler += sta;
+      }
+      triangler += "\n";
+    }   
+    console.log(triangler);
+  </script>
+</html>
