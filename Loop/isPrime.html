@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime number</title>
+</head>
+
+<body>
+    <h2>Display 20 first prime numbers</h2>
+    <div>
+        <p onclick="checkPrime()"><strong>Check prime number</strong></p>
+
+        <button onclick="displayPrime()">Display Prime</button>
+        <button onclick="displayPrime1()">Display Prime 1</button>
+    </div>
+</body>
+<script>
+    function displayPrime() {
+        let num = 2
+
+        for (let count = 1; count <= 20;) {
+            let flag = true
+            for (let i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    flag = false
+                    break
+                }
+            }
+            if (flag) {
+                document.write(num + ", ")
+                count++
+            }
+            num++
+        }
+    }
+
+    function displayPrime1() {
+        let num = 2
+
+        for (let count = 1; count <= 20;) {
+            if (checkPrime(num)) {
+                document.write(num + ", ")
+                count++
+            }
+            num++
+        }
+    }
+
+    function checkPrime(num) {
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                return false
+            }
+        }
+        return num > 1
+    }
+
+   
+</script>
+
+</html>
