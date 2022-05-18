@@ -29,7 +29,7 @@ function reverNum() {
     "<strong class='text-danger'>The reverse number is:  </strong>" + reverse;
 }
 
-//Ex 1: Print when num == 99 betwen 1 and 100
+//Ex : Print when num == 99 betwen 1 and 100
 function count100() {
   for (let i = 1; i <= 100; i++) {
     if (i == 99) {
@@ -62,4 +62,40 @@ function sumNum() {
     }
   }
   document.getElementById("result_3").innerHTML =  result 
+}
+
+// Ex 6: Find 30 first numbers divisble by 7 
+function ex6() {
+  // method 1: 
+  let sum = 0
+  for (let i = 0;i < 30;i++) {
+      sum += i*7
+  }
+  // method 2
+  // let count = 0 
+  // for (let i = 0; count < 30; count++) {
+  //   sum += i
+  //   i += 7
+  // }
+  document.getElementById("_firstNum").innerHTML = " 30 first numbers dvivisble by 7 are : " + sum
+}
+
+// Fizzbuzz
+function ex7() {
+  let num = 1 
+  let data = "<table class ='table'><tr class='table-success'><th>FizzBuzz</th><th>Fizz</th><th>Buzz</th></tr>"
+  while (num <= 100) {
+    data += "<tr>"
+      if (num % 5 == 0 & num % 3 == 0) {
+        data += "<td>" + num + "</td><td></td><td></td>"
+      } else if (num%3 == 0) {
+        data += "<td></td><td>"+ num + "</td><td></td>"
+      } else if (num%5 == 0) {
+        data += "<td></td><td></td><td>" + num + "</td>"
+      }
+      data += "</tr>"
+      num++
+  }
+  data += "</table>"
+  document.getElementById("fizzbuzz").innerHTML = data
 }
