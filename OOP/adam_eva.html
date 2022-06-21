@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam and Eva</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body></body>
+  <script>
+    class Apple {
+      constructor(weight = 10) {
+        this.weight = weight;
+      }
+
+      getWeight() {
+        return this.weight;
+      }
+
+      isEmpty() {
+        return this.weight == 0;
+      }
+
+      decrease() {
+        this.weight--;
+      }
+    }
+
+    class Human {
+      constructor(name, isMale = true, weight = 40) {
+        this.name = name;
+        this.isMale = isMale;
+        this.weight = weight;
+      }
+
+      getName() {
+        return this.name;
+      }
+      getGender() {
+        return this.isMale ? "Male" : "Female";
+      }
+      getWeight() {
+        return this.weight;
+      }
+
+      setName(name) {
+        this.name = name;
+      }
+      setGender(isMale) {
+        this.isMale = isMale;
+      }
+      setWeight(weight) {
+        this.weight = weight;
+      }
+
+      say(str) {
+        console.log(`${this.name} said: ${str}`);
+      }
+      checkApple(apple) {
+        return !apple.isEmpty();
+      }
+      eatApple(apple) {
+        if (!apple.isEmpty()) {
+          apple.decrease();
+          this.weight++;
+        }
+      }
+    }
+
+    let apple = new Apple();
+    let adam = new Human("Adam", true);
+    console.log(adam, apple);
+    console.log(adam.checkApple(apple));
+    while (adam.checkApple(apple)) {
+      adam.eatApple(apple);
+      console.log(adam, apple);
+    }
+    if (tao.getWeight() == 0) adam.say("You all finished the apple!");
+    else adam.say("Okay I got it!");
+  </script>
+</html>
