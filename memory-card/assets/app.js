@@ -3,7 +3,7 @@ const playerLivesCount = document.querySelector("span");
 let playerLives = 8;
 
 // Link text
-playerLivesCount.textContent = playerLives;
+playerLivesCount.textContent = playerLives; 
 
 // Generate the data
 const getData = () => [
@@ -28,8 +28,9 @@ const getData = () => [
 // Randomize
 const randomize = () => {
   const cardData = getData();
-  console.log(cardData);
+  // shuffle an array
   cardData.sort(() => Math.random() - 0.5);
+  // console.log(cardData); 
   return cardData;
 };
 
@@ -40,17 +41,17 @@ const cardGenerator = () => {
   const cards = document.querySelectorAll(".card");
   cardData.forEach((item) => {
     const card = document.createElement("div");
-    const face = document.createElement("img");
+    const front = document.createElement("img");
     const back = document.createElement("div");
     card.classList = "card";
-    face.classList = "face";
+    front.classList = "front";
     back.classList = "back";
     // Attach the info to the cards
-    face.src = item.imgSrc;
+    front.src = item.imgSrc;
     card.setAttribute("name", item.name);
     // Attach the cards to the section
     section.appendChild(card);
-    card.appendChild(face);
+    card.appendChild(front);
     card.appendChild(back);
 
     card.addEventListener("click", (e) => {
@@ -96,13 +97,13 @@ const checkCards = (e) => {
   }
   //   Run a check to see if we won the game
   if (toggleCard.length === 16) {
-    restart("You won!");
+    restart("You won🍇 🍉🍌🥭🍍!");
   }
 };
 //   Restart
 const restart = (text) => {
   let cardData = randomize();
-  let faces = document.querySelectorAll(".face");
+  let faces = document.querySelectorAll(".front");
   let cards = document.querySelectorAll(".card");
   section.style.pointerEvents = "none";
   cardData.forEach((item, index) => {
