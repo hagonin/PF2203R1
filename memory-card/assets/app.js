@@ -3,7 +3,7 @@ const playerLivesCount = document.querySelector("span");
 let playerLives = 8;
 
 // Link text
-playerLivesCount.textContent = playerLives; 
+playerLivesCount.textContent = playerLives;
 
 // Generate the data
 const getData = () => [
@@ -30,7 +30,7 @@ const randomize = () => {
   const cardData = getData();
   // shuffle an array
   cardData.sort(() => Math.random() - 0.5);
-  // console.log(cardData); 
+  // console.log(cardData);
   return cardData;
 };
 
@@ -91,13 +91,13 @@ const checkCards = (e) => {
       playerLives--;
       playerLivesCount.textContent = playerLives;
       if (playerLives === 0) {
-        restart("Try again!");
+        restart("Try again! You can nail it !");
       }
     }
   }
   //   Run a check to see if we won the game
   if (toggleCard.length === 16) {
-    restart("You won🍇 🍉🍌🥭🍍!");
+    restart("You won🍇 🍉🍌🥭🍍! Congratulations!");
   }
 };
 //   Restart
@@ -113,7 +113,7 @@ const restart = (text) => {
       cards[index].style.pointerEvents = "all";
       faces[index].src = item.imgSrc;
       cards[index].setAttribute("name", item.name);
-      section.style.pointerEvents = 'all'
+      section.style.pointerEvents = "all";
     }, 1000);
   });
   playerLives = 8;
@@ -121,12 +121,10 @@ const restart = (text) => {
   setTimeout(() => window.alert(text), 100);
 };
 // Play sound the cards
-const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387")
-const clickeCard = document.querySelectorAll('.card')
- clickeCard.forEach(img => {
-  img.addEventListener('click', () => {
-    audio.play()
-  })
- })
+// const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+// const clicked = document.querySelectorAll(".toggleCard")
+// clicked.addEventListener("click", () => {
+//   audio.play()
+// })
 
 cardGenerator();
